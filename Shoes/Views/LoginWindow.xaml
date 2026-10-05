@@ -1,0 +1,46 @@
+﻿<Window x:Class="Shoes.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация — ООО «Обувь»"
+        Width="460" Height="420"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Margin="28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Text="Вход в систему"
+                   FontSize="20" FontWeight="Bold"
+                   HorizontalAlignment="Center" Margin="0,0,0,16"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,4">
+            <TextBlock Text="Логин:" Width="90"/>
+            <TextBox x:Name="txtLogin" Width="280"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,4">
+            <TextBlock Text="Пароль:" Width="90"/>
+            <PasswordBox x:Name="txtPassword" Width="280"/>
+        </StackPanel>
+
+        <Button Grid.Row="4" x:Name="btnLogin" Content="Войти"
+                Style="{StaticResource AccentButton}"
+                Height="36" Margin="0,20,0,8"
+                Click="BtnLogin_Click"/>
+
+        <Button Grid.Row="5" x:Name="btnGuest" Content="Войти как гость"
+                Style="{StaticResource BaseButton}"
+                Height="32" VerticalAlignment="Top"
+                Click="BtnGuest_Click"/>
+
+        <TextBlock Grid.Row="6" Text="© ООО «Обувь», 2026"
+                   HorizontalAlignment="Center" Foreground="#666"/>
+    </Grid>
+</Window>

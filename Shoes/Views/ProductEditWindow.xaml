@@ -1,0 +1,81 @@
+﻿<Window x:Class="Shoes.Views.ProductEditWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Товар" Width="620" Height="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="169"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Text="ID (артикул):" Height="16"/>
+        <TextBox   Grid.Row="0" Grid.Column="1" x:Name="txtArticle"
+                   IsReadOnly="True"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Наименование:" Height="16"/>
+        <TextBox   Grid.Row="1" Grid.Column="1" x:Name="txtName"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Категория:" Height="16"/>
+        <ComboBox  Grid.Row="2" Grid.Column="1" x:Name="cmbCategory"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Описание:" Height="16"/>
+        <TextBox   Grid.Row="3" Grid.Column="1" x:Name="txtDescription"
+                   Height="NaN" AcceptsReturn="True" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Производитель:" Height="16"/>
+        <ComboBox  Grid.Row="4" Grid.Column="1" x:Name="cmbManufacturer"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Поставщик:" Height="16"/>
+        <ComboBox  Grid.Row="5" Grid.Column="1" x:Name="cmbSupplier"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Цена:" Height="16"/>
+        <TextBox   Grid.Row="6" Grid.Column="1" x:Name="txtPrice"
+                   PreviewTextInput="NumericOnly"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Единица измерения:" Height="16"/>
+        <ComboBox  Grid.Row="7" Grid.Column="1" x:Name="cmbUnit"/>
+
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="Кол-во на складе:" Height="16"/>
+        <TextBox   Grid.Row="8" Grid.Column="1" x:Name="txtStock"
+                   PreviewTextInput="NumericOnly"/>
+
+        <TextBlock Grid.Row="9" Grid.Column="0" Text="Действующая скидка (%):" Height="16"/>
+        <TextBox   Grid.Row="9" Grid.Column="1" x:Name="txtDiscount"
+                   PreviewTextInput="NumericOnly"/>
+
+        <TextBlock Grid.Row="10" Grid.Column="0" Text="Фото:" Height="16"/>
+        <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
+            <Image x:Name="imgPhoto" Width="150" Height="100"
+                   Stretch="Uniform" Margin="0,0,8,0"/>
+            <Button Content="Загрузить…" Style="{StaticResource BaseButton}"
+                    Click="BtnLoadPhoto_Click" Height="60"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="12" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Column="1" Width="376">
+            <Button Content="Сохранить" Style="{StaticResource AccentButton}"
+                    Width="120" Margin="0,0,8,0" Click="BtnSave_Click" Height="101"/>
+            <Button x:Name="btnDelete" Content="Удалить"   Style="{StaticResource BaseButton}"
+                    Width="120" Margin="0,0,8,0" Click="BtnDelete_Click" Height="101"/>
+            <Button Content="Назад"     Style="{StaticResource BaseButton}"
+                    Width="120" Click="BtnCancel_Click" Height="101"/>
+        </StackPanel>
+    </Grid>
+</Window>
